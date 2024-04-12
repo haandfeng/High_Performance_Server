@@ -1,0 +1,69 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "High_Performance_Server",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "High_Performance_Server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-High_Performance_Server-Debug-98f1bcea9f0b6ef24e14.json",
+					"name" : "High_Performance_Server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ReadHttp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ReadHttp-Debug-2588072481466fafc8d7.json",
+					"name" : "ReadHttp",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug",
+		"source" : "/Users/ha/CLionProjects/High_Performance_Server"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

@@ -1,0 +1,10 @@
+# ninja log v5
+5	50	1712927990947504112	build.ninja	bcf0cb6aa57c9a0a
+0	284	1712925888120403022	CMakeFiles/High_Performance_Server.dir/main.cpp.o	e5b37208a5c205e0
+285	330	1712925888165477392	High_Performance_Server	652dc610a462dc4d
+0	43	1712927990947504112	build.ninja	bcf0cb6aa57c9a0a
+0	253	1712927991203356608	CMakeFiles/ReadHttp.dir/C8/ReadHttp.cpp.o	beb265785ea7d0fa
+1	224	1712927996935323140	CMakeFiles/ReadHttp.dir/C8/ReadHttp.cpp.o	beb265785ea7d0fa
+225	262	1712927996972670973	ReadHttp	e4c1fff418cc0f37
+1	419	1712928960419225477	CMakeFiles/ReadHttp.dir/C8/ReadHttp.cpp.o	beb265785ea7d0fa
+420	572	1712928960570755174	ReadHttp	e4c1fff418cc0f37

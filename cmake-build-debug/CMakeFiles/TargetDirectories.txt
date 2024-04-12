@@ -1,0 +1,4 @@
+/Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug/CMakeFiles/High_Performance_Server.dir
+/Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug/CMakeFiles/ReadHttp.dir
+/Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug/CMakeFiles/rebuild_cache.dir
