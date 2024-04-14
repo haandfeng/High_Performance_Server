@@ -1,7 +1,6 @@
 //
 // Created by 谭演锋 on 2024/4/12.
 //
-
 #include <iostream>
 #include<sys/socket.h>
 #include<netinet/in.h>
@@ -23,6 +22,7 @@ enum LINE_STATUS{LINE_OK=0,LINE_BAD,LINE_OPEN};
 enum HTTP_CODE{NO_REQUEST,GET_REQUEST,BAD_REQUEST, FORBIDDEN_REQUEST,INTERNAL_ERROR,CLOSED_CONNECTION}; /*为了简化问题，我们没有给客户端发送一个完整的HTTP应答报文，而只是根据服务器
 的处理结果发送如下成功或失败信息*/
 static const char*szret[]={"I get a correct result\n","Something wrong\n"};
+
 /*从状态机，用于解析出一行内容*/
 LINE_STATUS parse_line(char*buffer,int&checked_index,int&read_index)
 {
@@ -35,19 +35,21 @@ LINE_STATUS parse_line(char*buffer,int&checked_index,int&read_index)
     /*如果当前的字节是“\r”，即回车符，则说明可能读取到一个完整的行*/
     if(temp=='\r')
     {
-/*如果“\r”字符碰巧是目前buffer中的最后一个已经被读入的客户数据，那么这次分 析没有读取到一个完整的行，返回LINE_OPEN以表示还需要继续读取客户数据才能进一步分 析*/
+/*如果“\r”字符碰巧是目前buffer中的最后一个已经被读入的客户数据，那么这次分析没有读取到一个完整的行，返回LINE_OPEN以表示还需要继续读取客户数据才能进一步分 析*/
         if((checked_index+1)==read_index)
         {
             return LINE_OPEN;
         } /*如果下一个字符是“\n”，则说明我们成功读取到一个完整的行*/
         else if(buffer[checked_index+1]=='\n')
         {
-            buffer[checked_index++]='\0'; buffer[checked_index++]='\0';
+            buffer[checked_index++]='\0';
+            buffer[checked_index++]='\0';
             return LINE_OK;
         } /*否则的话，说明客户发送的HTTP请求存在语法问题*/
         return LINE_BAD;
     }
-        /*如果当前的字节是“\n”，即换行符，则也说明可能读取到一个完整的行*/ else if(temp=='\n')
+        /*如果当前的字节是“\n”，即换行符，则也说明可能读取到一个完整的行*/
+    else if(temp=='\n')
     {
         if((checked_index>1)&&buffer[checked_index-1]=='\r')
         {
@@ -65,12 +67,15 @@ LINE_STATUS parse_line(char*buffer,int&checked_index,int&read_index)
 /*分析请求行*/
 HTTP_CODE parse_requestline(char*temp,CHECK_STATE&checkstate)
 {
-    char*url=strpbrk(temp,"\t"); /*如果请求行中没有空白字符或“\t”字符，则HTTP请求必有问题*/ if(!url)
+    char*url=strpbrk(temp,"\t");
+    /*如果请求行中没有空白字符或“\t”字符，则HTTP请求必有问题*/
+    if(!url)
     {
         return BAD_REQUEST;
     }
     *url++='\0';
-    char*method=temp; if(strcasecmp(method,"GET")==0)/*仅支持GET方法*/
+    char*method=temp;
+    if(strcasecmp(method,"GET")==0)/*仅支持GET方法*/
     {
         printf("The request method is GET\n");
     }
@@ -78,18 +83,21 @@ HTTP_CODE parse_requestline(char*temp,CHECK_STATE&checkstate)
     {
         return BAD_REQUEST;
     }
-    url+=strspn(url,"\t"); char*version=strpbrk(url,"\t");
+    url+=strspn(url,"\t");
+    char*version=strpbrk(url,"\t");
     if(!version)
     {
         return BAD_REQUEST;
     }
     *version++='\0';
     version+=strspn(version,"\t");
-/*仅支持HTTP/1.1*/ if(strcasecmp(version,"HTTP/1.1")!=0)
+/*仅支持HTTP/1.1*/
+if(strcasecmp(version,"HTTP/1.1")!=0)
     {
         return BAD_REQUEST;
     }
     /*检查URL是否合法*/
+//    前7个字符是否一样
     if(strncasecmp(url,"http://",7)==0)
     {
         url+=7;
@@ -103,14 +111,17 @@ HTTP_CODE parse_requestline(char*temp,CHECK_STATE&checkstate)
     /*HTTP请求行处理完毕，状态转移到头部字段的分析*/ checkstate=CHECK_STATE_HEADER;
     return NO_REQUEST;
 }
+
 /*分析头部字段*/
 HTTP_CODE parse_headers(char*temp)
 {
-/*遇到一个空行，说明我们得到了一个正确的HTTP请求*/ if(temp[0]=='\0')
+/*遇到一个空行，说明我们得到了一个正确的HTTP请求*/
+    if(temp[0]=='\0')
     {
         return GET_REQUEST;
     }
-    else if(strncasecmp(temp,"Host:",5)==0)/*处理“HOST”头部字段*/ {
+    else if(strncasecmp(temp,"Host:",5)==0)/*处理“HOST”头部字段*/
+    {
         temp+=5;
         temp+=strspn(temp,"\t");
         printf("the request host is:%s\n",temp);
@@ -122,11 +133,11 @@ HTTP_CODE parse_headers(char*temp)
     return NO_REQUEST;
 }
 /*分析HTTP请求的入口函数*/
-HTTP_CODE parse_content(char*buffer,int&
-checked_index,CHECK_STATE&checkstate,int&read_index,int& start_line)
+HTTP_CODE parse_content(char*buffer,int&checked_index,CHECK_STATE&checkstate,int&read_index,int& start_line)
 {
     LINE_STATUS linestatus=LINE_OK;/*记录当前行的读取状态*/
-    HTTP_CODE retcode=NO_REQUEST;/*记录HTTP请求的处理结果*/ /*主状态机，用于从buffer中取出所有完整的行*/
+    HTTP_CODE retcode=NO_REQUEST;/*记录HTTP请求的处理结果*/
+    /*主状态机，用于从buffer中取出所有完整的行*/
     while((linestatus=parse_line(buffer,checked_index,read_index))==LINE_OK) {
         char*temp=buffer+start_line;/*start_line是行在buffer中的起始位置*/
         start_line=checked_index;/*记录下一行的起始位置*/
@@ -160,7 +171,8 @@ checked_index,CHECK_STATE&checkstate,int&read_index,int& start_line)
             }
         }
     }
-    /*若没有读取到一个完整的行，则表示还需要继续读取客户数据才能进一步分析*/ if(linestatus==LINE_OPEN)
+    /*若没有读取到一个完整的行，则表示还需要继续读取客户数据才能进一步分析*/
+    if(linestatus==LINE_OPEN)
     {
         return NO_REQUEST;
     }
@@ -181,27 +193,32 @@ int main(int argc,char*argv[])
     bzero(&address,sizeof(address));
     address.sin_family=AF_INET; inet_pton(AF_INET,ip,&address.sin_addr);
     address.sin_port=htons(port);
-    int listenfd=socket(PF_INET,SOCK_STREAM,0); assert(listenfd>=0);
+    int listenfd = socket(PF_INET,SOCK_STREAM,0);
+    assert(listenfd>=0);
     int ret=bind(listenfd,(struct sockaddr*)&address,sizeof(address));
     assert(ret!=-1);
     ret=listen(listenfd,5);
     assert(ret!=-1);
     struct sockaddr_in client_address;
     socklen_t client_addrlength=sizeof(client_address);
-    int fd=accept(listenfd,(struct sockaddr*)&client_address,&
-            client_addrlength); if(fd<0)
+    int fd=accept(listenfd,(struct sockaddr*)&client_address,&client_addrlength);
+    if(fd<0)
     {
         printf("errno is:%d\n",errno);
     }
     else
     {
-        char buffer[BUFFER_SIZE];/*读缓冲区*/ memset(buffer,'\0',BUFFER_SIZE);
+        char buffer[BUFFER_SIZE];/*读缓冲区*/
+        memset(buffer,'\0',BUFFER_SIZE);
         int data_read=0;
         int read_index=0;/*当前已经读取了多少字节的客户数据*/
         int checked_index=0;/*当前已经分析完了多少字节的客户数据*/
         int start_line=0;/*行在buffer中的起始位置*/ /*设置主状态机的初始状态*/
-        CHECK_STATE checkstate=CHECK_STATE_REQUESTLINE; while(1)/*循环读取客户数据并分析之*/
-        { data_read=recv(fd,buffer+read_index,BUFFER_SIZE-read_index,0); if(data_read==-1)
+        CHECK_STATE checkstate=CHECK_STATE_REQUESTLINE;
+        while(1)/*循环读取客户数据并分析之*/
+        {
+            data_read = recv(fd,buffer+read_index,BUFFER_SIZE-read_index,0);
+            if(data_read==-1)
             {
                 printf("reading failed\n");
                 break;
@@ -213,8 +230,7 @@ int main(int argc,char*argv[])
             }
             read_index+=data_read;
 /*分析目前已经获得的所有客户数据*/
-            HTTP_CODE
-                    result=parse_content(buffer,checked_index,checkstate,read_index,start_line);
+            HTTP_CODE result=parse_content(buffer,checked_index,checkstate,read_index,start_line);
             if(result==NO_REQUEST)/*尚未得到一个完整的HTTP请求*/ {
                 continue;
             }
@@ -222,8 +238,9 @@ int main(int argc,char*argv[])
                 send(fd,szret[0],strlen(szret[0]),0);
                 break;
             }
-            else/*其他情况表示发生错误*/
-            { send(fd,szret[1],strlen(szret[1]),0); break;
+            else/*其他情况表示发生错误*/{
+                send(fd,szret[1],strlen(szret[1]),0);
+                break;
             }
         }
         close(fd);

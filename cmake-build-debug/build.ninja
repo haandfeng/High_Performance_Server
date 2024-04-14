@@ -102,6 +102,192 @@ build ReadHttp: CXX_EXECUTABLE_LINKER__ReadHttp_Debug CMakeFiles/ReadHttp.dir/C8
   TARGET_FILE = ReadHttp
   TARGET_PDB = ReadHttp.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target ReceiveTypeData
+
+
+#############################################
+# Order-only phony target for ReceiveTypeData
+
+build cmake_object_order_depends_target_ReceiveTypeData: phony || CMakeFiles/ReceiveTypeData.dir
+
+build CMakeFiles/ReceiveTypeData.dir/C9/ReceiveTypeData.cpp.o: CXX_COMPILER__ReceiveTypeData_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C9/ReceiveTypeData.cpp || cmake_object_order_depends_target_ReceiveTypeData
+  DEP_FILE = CMakeFiles/ReceiveTypeData.dir/C9/ReceiveTypeData.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/ReceiveTypeData.dir
+  OBJECT_FILE_DIR = CMakeFiles/ReceiveTypeData.dir/C9
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ReceiveTypeData
+
+
+#############################################
+# Link the executable ReceiveTypeData
+
+build ReceiveTypeData: CXX_EXECUTABLE_LINKER__ReceiveTypeData_Debug CMakeFiles/ReceiveTypeData.dir/C9/ReceiveTypeData.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  OBJECT_DIR = CMakeFiles/ReceiveTypeData.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = ReceiveTypeData
+  TARGET_PDB = ReceiveTypeData.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target LTvsET
+
+
+#############################################
+# Order-only phony target for LTvsET
+
+build cmake_object_order_depends_target_LTvsET: phony || CMakeFiles/LTvsET.dir
+
+build CMakeFiles/LTvsET.dir/C9/LTvsET.cpp.o: CXX_COMPILER__LTvsET_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C9/LTvsET.cpp || cmake_object_order_depends_target_LTvsET
+  DEP_FILE = CMakeFiles/LTvsET.dir/C9/LTvsET.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/LTvsET.dir
+  OBJECT_FILE_DIR = CMakeFiles/LTvsET.dir/C9
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target LTvsET
+
+
+#############################################
+# Link the executable LTvsET
+
+build LTvsET: CXX_EXECUTABLE_LINKER__LTvsET_Debug CMakeFiles/LTvsET.dir/C9/LTvsET.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  OBJECT_DIR = CMakeFiles/LTvsET.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = LTvsET
+  TARGET_PDB = LTvsET.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target UnblockedConnect
+
+
+#############################################
+# Order-only phony target for UnblockedConnect
+
+build cmake_object_order_depends_target_UnblockedConnect: phony || CMakeFiles/UnblockedConnect.dir
+
+build CMakeFiles/UnblockedConnect.dir/C9/UnblockedConnect.cpp.o: CXX_COMPILER__UnblockedConnect_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C9/UnblockedConnect.cpp || cmake_object_order_depends_target_UnblockedConnect
+  DEP_FILE = CMakeFiles/UnblockedConnect.dir/C9/UnblockedConnect.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/UnblockedConnect.dir
+  OBJECT_FILE_DIR = CMakeFiles/UnblockedConnect.dir/C9
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target UnblockedConnect
+
+
+#############################################
+# Link the executable UnblockedConnect
+
+build UnblockedConnect: CXX_EXECUTABLE_LINKER__UnblockedConnect_Debug CMakeFiles/UnblockedConnect.dir/C9/UnblockedConnect.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  OBJECT_DIR = CMakeFiles/UnblockedConnect.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = UnblockedConnect
+  TARGET_PDB = UnblockedConnect.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target ChatRoom_Client
+
+
+#############################################
+# Order-only phony target for ChatRoom_Client
+
+build cmake_object_order_depends_target_ChatRoom_Client: phony || CMakeFiles/ChatRoom_Client.dir
+
+build CMakeFiles/ChatRoom_Client.dir/C9/ChatRoom_Client.cpp.o: CXX_COMPILER__ChatRoom_Client_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C9/ChatRoom_Client.cpp || cmake_object_order_depends_target_ChatRoom_Client
+  DEP_FILE = CMakeFiles/ChatRoom_Client.dir/C9/ChatRoom_Client.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/ChatRoom_Client.dir
+  OBJECT_FILE_DIR = CMakeFiles/ChatRoom_Client.dir/C9
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ChatRoom_Client
+
+
+#############################################
+# Link the executable ChatRoom_Client
+
+build ChatRoom_Client: CXX_EXECUTABLE_LINKER__ChatRoom_Client_Debug CMakeFiles/ChatRoom_Client.dir/C9/ChatRoom_Client.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  OBJECT_DIR = CMakeFiles/ChatRoom_Client.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = ChatRoom_Client
+  TARGET_PDB = ChatRoom_Client.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target ChatRoom_Server
+
+
+#############################################
+# Order-only phony target for ChatRoom_Server
+
+build cmake_object_order_depends_target_ChatRoom_Server: phony || CMakeFiles/ChatRoom_Server.dir
+
+build CMakeFiles/ChatRoom_Server.dir/C9/ChatRoom_Server.cpp.o: CXX_COMPILER__ChatRoom_Server_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C9/ChatRoom_Server.cpp || cmake_object_order_depends_target_ChatRoom_Server
+  DEP_FILE = CMakeFiles/ChatRoom_Server.dir/C9/ChatRoom_Server.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/ChatRoom_Server.dir
+  OBJECT_FILE_DIR = CMakeFiles/ChatRoom_Server.dir/C9
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ChatRoom_Server
+
+
+#############################################
+# Link the executable ChatRoom_Server
+
+build ChatRoom_Server: CXX_EXECUTABLE_LINKER__ChatRoom_Server_Debug CMakeFiles/ChatRoom_Server.dir/C9/ChatRoom_Server.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  OBJECT_DIR = CMakeFiles/ChatRoom_Server.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = ChatRoom_Server
+  TARGET_PDB = ChatRoom_Server.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target SimultaneousTCPandUDP
+
+
+#############################################
+# Order-only phony target for SimultaneousTCPandUDP
+
+build cmake_object_order_depends_target_SimultaneousTCPandUDP: phony || CMakeFiles/SimultaneousTCPandUDP.dir
+
+build CMakeFiles/SimultaneousTCPandUDP.dir/C9/SimultaneousTCPandUDP.cpp.o: CXX_COMPILER__SimultaneousTCPandUDP_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C9/SimultaneousTCPandUDP.cpp || cmake_object_order_depends_target_SimultaneousTCPandUDP
+  DEP_FILE = CMakeFiles/SimultaneousTCPandUDP.dir/C9/SimultaneousTCPandUDP.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/SimultaneousTCPandUDP.dir
+  OBJECT_FILE_DIR = CMakeFiles/SimultaneousTCPandUDP.dir/C9
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target SimultaneousTCPandUDP
+
+
+#############################################
+# Link the executable SimultaneousTCPandUDP
+
+build SimultaneousTCPandUDP: CXX_EXECUTABLE_LINKER__SimultaneousTCPandUDP_Debug CMakeFiles/SimultaneousTCPandUDP.dir/C9/SimultaneousTCPandUDP.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  OBJECT_DIR = CMakeFiles/SimultaneousTCPandUDP.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = SimultaneousTCPandUDP
+  TARGET_PDB = SimultaneousTCPandUDP.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -136,7 +322,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug
 
-build all: phony High_Performance_Server ReadHttp
+build all: phony High_Performance_Server ReadHttp ReceiveTypeData LTvsET UnblockedConnect ChatRoom_Client ChatRoom_Server SimultaneousTCPandUDP
 
 # =============================================================================
 # Built-in targets

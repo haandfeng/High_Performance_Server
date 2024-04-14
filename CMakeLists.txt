@@ -7,3 +7,17 @@ add_executable(High_Performance_Server main.cpp)
 
 add_executable(ReadHttp
         C8/ReadHttp.cpp)
+
+add_executable(ReceiveTypeData
+        C9/ReceiveTypeData.cpp
+        C9/ReceiveTypeData.cpp)
+add_executable(LTvsET C9/LTvsET.cpp
+        C9/LTvsET.cpp)
+add_executable(UnblockedConnect C9/UnblockedConnect.cpp
+        C9/UnblockedConnect.cpp)
+add_executable(ChatRoom_Client C9/ChatRoom_Client.cpp
+        C9/ChatRoom_Client.cpp)
+add_executable(ChatRoom_Server C9/ChatRoom_Server.cpp
+        C9/ChatRoom_Server.cpp)
+add_executable(SimultaneousTCPandUDP C9/SimultaneousTCPandUDP.cpp
+        C9/SimultaneousTCPandUDP.cpp)

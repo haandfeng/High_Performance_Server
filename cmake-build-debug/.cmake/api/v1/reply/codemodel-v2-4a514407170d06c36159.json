@@ -1,0 +1,123 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "High_Performance_Server",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "ChatRoom_Client::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ChatRoom_Client-Debug-1bdebc8a22ddc81d5650.json",
+					"name" : "ChatRoom_Client",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ChatRoom_Server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ChatRoom_Server-Debug-2f6ed6644ba025a80ad4.json",
+					"name" : "ChatRoom_Server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "High_Performance_Server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-High_Performance_Server-Debug-98f1bcea9f0b6ef24e14.json",
+					"name" : "High_Performance_Server",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "LTvsET::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-LTvsET-Debug-1b740fcb313ef0c7e068.json",
+					"name" : "LTvsET",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ReadHttp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ReadHttp-Debug-2588072481466fafc8d7.json",
+					"name" : "ReadHttp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "ReceiveTypeData::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-ReceiveTypeData-Debug-28b674c78a97e9a17731.json",
+					"name" : "ReceiveTypeData",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "SimultaneousTCPandUDP::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-SimultaneousTCPandUDP-Debug-c42e8f03ba3593aed567.json",
+					"name" : "SimultaneousTCPandUDP",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "UnblockedConnect::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-UnblockedConnect-Debug-2591b46292613978ef6e.json",
+					"name" : "UnblockedConnect",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug",
+		"source" : "/Users/ha/CLionProjects/High_Performance_Server"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
