@@ -103,35 +103,35 @@ build ReadHttp: CXX_EXECUTABLE_LINKER__ReadHttp_Debug CMakeFiles/ReadHttp.dir/C8
   TARGET_PDB = ReadHttp.dbg
 
 # =============================================================================
-# Object build statements for EXECUTABLE target ReceiveTypeData
+# Object build statements for EXECUTABLE target ReceiveTypeDataBySelect
 
 
 #############################################
-# Order-only phony target for ReceiveTypeData
+# Order-only phony target for ReceiveTypeDataBySelect
 
-build cmake_object_order_depends_target_ReceiveTypeData: phony || CMakeFiles/ReceiveTypeData.dir
+build cmake_object_order_depends_target_ReceiveTypeDataBySelect: phony || CMakeFiles/ReceiveTypeDataBySelect.dir
 
-build CMakeFiles/ReceiveTypeData.dir/C9/ReceiveTypeData.cpp.o: CXX_COMPILER__ReceiveTypeData_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C9/ReceiveTypeData.cpp || cmake_object_order_depends_target_ReceiveTypeData
-  DEP_FILE = CMakeFiles/ReceiveTypeData.dir/C9/ReceiveTypeData.cpp.o.d
+build CMakeFiles/ReceiveTypeDataBySelect.dir/C9/ReceiveUrgDataBySelect.cpp.o: CXX_COMPILER__ReceiveTypeDataBySelect_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C9/ReceiveUrgDataBySelect.cpp || cmake_object_order_depends_target_ReceiveTypeDataBySelect
+  DEP_FILE = CMakeFiles/ReceiveTypeDataBySelect.dir/C9/ReceiveUrgDataBySelect.cpp.o.d
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles/ReceiveTypeData.dir
-  OBJECT_FILE_DIR = CMakeFiles/ReceiveTypeData.dir/C9
+  OBJECT_DIR = CMakeFiles/ReceiveTypeDataBySelect.dir
+  OBJECT_FILE_DIR = CMakeFiles/ReceiveTypeDataBySelect.dir/C9
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target ReceiveTypeData
+# Link build statements for EXECUTABLE target ReceiveTypeDataBySelect
 
 
 #############################################
-# Link the executable ReceiveTypeData
+# Link the executable ReceiveTypeDataBySelect
 
-build ReceiveTypeData: CXX_EXECUTABLE_LINKER__ReceiveTypeData_Debug CMakeFiles/ReceiveTypeData.dir/C9/ReceiveTypeData.cpp.o
+build ReceiveTypeDataBySelect: CXX_EXECUTABLE_LINKER__ReceiveTypeDataBySelect_Debug CMakeFiles/ReceiveTypeDataBySelect.dir/C9/ReceiveUrgDataBySelect.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
-  OBJECT_DIR = CMakeFiles/ReceiveTypeData.dir
+  OBJECT_DIR = CMakeFiles/ReceiveTypeDataBySelect.dir
   POST_BUILD = :
   PRE_LINK = :
-  TARGET_FILE = ReceiveTypeData
-  TARGET_PDB = ReceiveTypeData.dbg
+  TARGET_FILE = ReceiveTypeDataBySelect
+  TARGET_PDB = ReceiveTypeDataBySelect.dbg
 
 # =============================================================================
 # Object build statements for EXECUTABLE target LTvsET
@@ -288,6 +288,68 @@ build SimultaneousTCPandUDP: CXX_EXECUTABLE_LINKER__SimultaneousTCPandUDP_Debug 
   TARGET_FILE = SimultaneousTCPandUDP
   TARGET_PDB = SimultaneousTCPandUDP.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target UnifiedEventSource
+
+
+#############################################
+# Order-only phony target for UnifiedEventSource
+
+build cmake_object_order_depends_target_UnifiedEventSource: phony || CMakeFiles/UnifiedEventSource.dir
+
+build CMakeFiles/UnifiedEventSource.dir/C10/UnifiedEventSource.cpp.o: CXX_COMPILER__UnifiedEventSource_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C10/UnifiedEventSource.cpp || cmake_object_order_depends_target_UnifiedEventSource
+  DEP_FILE = CMakeFiles/UnifiedEventSource.dir/C10/UnifiedEventSource.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/UnifiedEventSource.dir
+  OBJECT_FILE_DIR = CMakeFiles/UnifiedEventSource.dir/C10
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target UnifiedEventSource
+
+
+#############################################
+# Link the executable UnifiedEventSource
+
+build UnifiedEventSource: CXX_EXECUTABLE_LINKER__UnifiedEventSource_Debug CMakeFiles/UnifiedEventSource.dir/C10/UnifiedEventSource.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  OBJECT_DIR = CMakeFiles/UnifiedEventSource.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = UnifiedEventSource
+  TARGET_PDB = UnifiedEventSource.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target ReceiveUrgDataBySig
+
+
+#############################################
+# Order-only phony target for ReceiveUrgDataBySig
+
+build cmake_object_order_depends_target_ReceiveUrgDataBySig: phony || CMakeFiles/ReceiveUrgDataBySig.dir
+
+build CMakeFiles/ReceiveUrgDataBySig.dir/C10/ReceiveUrgDataBySig.cpp.o: CXX_COMPILER__ReceiveUrgDataBySig_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C10/ReceiveUrgDataBySig.cpp || cmake_object_order_depends_target_ReceiveUrgDataBySig
+  DEP_FILE = CMakeFiles/ReceiveUrgDataBySig.dir/C10/ReceiveUrgDataBySig.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/ReceiveUrgDataBySig.dir
+  OBJECT_FILE_DIR = CMakeFiles/ReceiveUrgDataBySig.dir/C10
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ReceiveUrgDataBySig
+
+
+#############################################
+# Link the executable ReceiveUrgDataBySig
+
+build ReceiveUrgDataBySig: CXX_EXECUTABLE_LINKER__ReceiveUrgDataBySig_Debug CMakeFiles/ReceiveUrgDataBySig.dir/C10/ReceiveUrgDataBySig.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  OBJECT_DIR = CMakeFiles/ReceiveUrgDataBySig.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = ReceiveUrgDataBySig
+  TARGET_PDB = ReceiveUrgDataBySig.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -322,7 +384,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug
 
-build all: phony High_Performance_Server ReadHttp ReceiveTypeData LTvsET UnblockedConnect ChatRoom_Client ChatRoom_Server SimultaneousTCPandUDP
+build all: phony High_Performance_Server ReadHttp ReceiveTypeDataBySelect LTvsET UnblockedConnect ChatRoom_Client ChatRoom_Server SimultaneousTCPandUDP UnifiedEventSource ReceiveUrgDataBySig
 
 # =============================================================================
 # Built-in targets

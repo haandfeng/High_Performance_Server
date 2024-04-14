@@ -54,7 +54,7 @@ int main(int argc,char*argv[]) {
         /*每次调用select前都要重新在read_fds和exception_fds中设置文件描述符connfd，因为事件发生之后，文件描述符集合将被内核修改*/
         FD_SET(connfd,&read_fds);
         FD_SET(connfd,&exception_fds);
-//           int select(int nfds,fd_set*readfds,fd_set*writefds,fd_set*exceptfds,struct timeval*timeout);
+        int select(int nfds,fd_set*readfds,fd_set*writefds,fd_set*exceptfds,struct timeval*timeout);
         ret=select(connfd+1,&read_fds,NULL,&exception_fds,NULL);
         if(ret<0)
         {
