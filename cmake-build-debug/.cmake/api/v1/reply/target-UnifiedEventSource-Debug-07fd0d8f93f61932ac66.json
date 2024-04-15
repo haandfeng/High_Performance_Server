@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "ChatRoom_Client"
+			"path" : "UnifiedEventSource"
 		}
 	],
 	"backtrace" : 1,
@@ -24,7 +24,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 18,
+				"line" : 25,
 				"parent" : 0
 			}
 		]
@@ -53,7 +53,7 @@
 			]
 		}
 	],
-	"id" : "ChatRoom_Client::@6890427a1f51a3e7e1df",
+	"id" : "UnifiedEventSource::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -69,8 +69,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "ChatRoom_Client",
-	"nameOnDisk" : "ChatRoom_Client",
+	"name" : "UnifiedEventSource",
+	"nameOnDisk" : "UnifiedEventSource",
 	"paths" : 
 	{
 		"build" : ".",
@@ -91,7 +91,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "C9/ChatRoom_Client.cpp",
+			"path" : "C10/UnifiedEventSource.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

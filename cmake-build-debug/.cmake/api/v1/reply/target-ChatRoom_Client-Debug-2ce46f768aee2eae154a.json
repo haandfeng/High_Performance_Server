@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "ChatRoom_Server"
+			"path" : "ChatRoom_Client"
 		}
 	],
 	"backtrace" : 1,
@@ -24,7 +24,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 20,
+				"line" : 18,
 				"parent" : 0
 			}
 		]
@@ -53,7 +53,7 @@
 			]
 		}
 	],
-	"id" : "ChatRoom_Server::@6890427a1f51a3e7e1df",
+	"id" : "ChatRoom_Client::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -69,8 +69,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "ChatRoom_Server",
-	"nameOnDisk" : "ChatRoom_Server",
+	"name" : "ChatRoom_Client",
+	"nameOnDisk" : "ChatRoom_Client",
 	"paths" : 
 	{
 		"build" : ".",
@@ -84,6 +84,13 @@
 			[
 				0
 			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				1
+			]
 		}
 	],
 	"sources" : 
@@ -91,8 +98,13 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "C9/ChatRoom_Server.cpp",
+			"path" : "C9/ChatRoom_Client.cpp",
 			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "C11/LST_Timer.h",
+			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

@@ -350,6 +350,68 @@ build ReceiveUrgDataBySig: CXX_EXECUTABLE_LINKER__ReceiveUrgDataBySig_Debug CMak
   TARGET_FILE = ReceiveUrgDataBySig
   TARGET_PDB = ReceiveUrgDataBySig.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target ConnectTimeOut
+
+
+#############################################
+# Order-only phony target for ConnectTimeOut
+
+build cmake_object_order_depends_target_ConnectTimeOut: phony || CMakeFiles/ConnectTimeOut.dir
+
+build CMakeFiles/ConnectTimeOut.dir/C11/ConnectTimeOut.cpp.o: CXX_COMPILER__ConnectTimeOut_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C11/ConnectTimeOut.cpp || cmake_object_order_depends_target_ConnectTimeOut
+  DEP_FILE = CMakeFiles/ConnectTimeOut.dir/C11/ConnectTimeOut.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/ConnectTimeOut.dir
+  OBJECT_FILE_DIR = CMakeFiles/ConnectTimeOut.dir/C11
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ConnectTimeOut
+
+
+#############################################
+# Link the executable ConnectTimeOut
+
+build ConnectTimeOut: CXX_EXECUTABLE_LINKER__ConnectTimeOut_Debug CMakeFiles/ConnectTimeOut.dir/C11/ConnectTimeOut.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  OBJECT_DIR = CMakeFiles/ConnectTimeOut.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = ConnectTimeOut
+  TARGET_PDB = ConnectTimeOut.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target CloseUnactiveConnect
+
+
+#############################################
+# Order-only phony target for CloseUnactiveConnect
+
+build cmake_object_order_depends_target_CloseUnactiveConnect: phony || CMakeFiles/CloseUnactiveConnect.dir
+
+build CMakeFiles/CloseUnactiveConnect.dir/C11/CloseUnactiveConnect.cpp.o: CXX_COMPILER__CloseUnactiveConnect_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C11/CloseUnactiveConnect.cpp || cmake_object_order_depends_target_CloseUnactiveConnect
+  DEP_FILE = CMakeFiles/CloseUnactiveConnect.dir/C11/CloseUnactiveConnect.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/CloseUnactiveConnect.dir
+  OBJECT_FILE_DIR = CMakeFiles/CloseUnactiveConnect.dir/C11
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target CloseUnactiveConnect
+
+
+#############################################
+# Link the executable CloseUnactiveConnect
+
+build CloseUnactiveConnect: CXX_EXECUTABLE_LINKER__CloseUnactiveConnect_Debug CMakeFiles/CloseUnactiveConnect.dir/C11/CloseUnactiveConnect.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  OBJECT_DIR = CMakeFiles/CloseUnactiveConnect.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = CloseUnactiveConnect
+  TARGET_PDB = CloseUnactiveConnect.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -384,7 +446,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug
 
-build all: phony High_Performance_Server ReadHttp ReceiveTypeDataBySelect LTvsET UnblockedConnect ChatRoom_Client ChatRoom_Server SimultaneousTCPandUDP UnifiedEventSource ReceiveUrgDataBySig
+build all: phony High_Performance_Server ReadHttp ReceiveTypeDataBySelect LTvsET UnblockedConnect ChatRoom_Client ChatRoom_Server SimultaneousTCPandUDP UnifiedEventSource ReceiveUrgDataBySig ConnectTimeOut CloseUnactiveConnect
 
 # =============================================================================
 # Built-in targets
