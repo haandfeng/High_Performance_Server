@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "ShareMemoryChatRoomServer"
+			"path" : "ChatRoom_Server"
 		}
 	],
 	"backtrace" : 1,
@@ -24,7 +24,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 35,
+				"line" : 22,
 				"parent" : 0
 			}
 		]
@@ -53,7 +53,7 @@
 			]
 		}
 	],
-	"id" : "ShareMemoryChatRoomServer::@6890427a1f51a3e7e1df",
+	"id" : "ChatRoom_Server::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -69,8 +69,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "ShareMemoryChatRoomServer",
-	"nameOnDisk" : "ShareMemoryChatRoomServer",
+	"name" : "ChatRoom_Server",
+	"nameOnDisk" : "ChatRoom_Server",
 	"paths" : 
 	{
 		"build" : ".",
@@ -91,7 +91,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "C13/ShareMemoryChatRoomServer.cpp",
+			"path" : "C9/ChatRoom_Server.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

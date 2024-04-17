@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "CloseUnactiveConnect"
+			"path" : "ConnectTimeOut"
 		}
 	],
 	"backtrace" : 1,
@@ -24,7 +24,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 31,
+				"line" : 30,
 				"parent" : 0
 			}
 		]
@@ -53,7 +53,7 @@
 			]
 		}
 	],
-	"id" : "CloseUnactiveConnect::@6890427a1f51a3e7e1df",
+	"id" : "ConnectTimeOut::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -69,8 +69,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "CloseUnactiveConnect",
-	"nameOnDisk" : "CloseUnactiveConnect",
+	"name" : "ConnectTimeOut",
+	"nameOnDisk" : "ConnectTimeOut",
 	"paths" : 
 	{
 		"build" : ".",
@@ -84,13 +84,6 @@
 			[
 				0
 			]
-		},
-		{
-			"name" : "Header Files",
-			"sourceIndexes" : 
-			[
-				1
-			]
 		}
 	],
 	"sources" : 
@@ -98,13 +91,8 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "C11/CloseUnactiveConnect.cpp",
+			"path" : "C11/ConnectTimeOut.cpp",
 			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "C11/LST_Timer.h",
-			"sourceGroupIndex" : 1
 		}
 	],
 	"type" : "EXECUTABLE"

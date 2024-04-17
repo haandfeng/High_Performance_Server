@@ -210,6 +210,12 @@ build CMakeFiles/ChatRoom_Client.dir/C9/ChatRoom_Client.cpp.o: CXX_COMPILER__Cha
   OBJECT_DIR = CMakeFiles/ChatRoom_Client.dir
   OBJECT_FILE_DIR = CMakeFiles/ChatRoom_Client.dir/C9
 
+build CMakeFiles/ChatRoom_Client.dir/C14/OneThreadForAllSig.cpp.o: CXX_COMPILER__ChatRoom_Client_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C14/OneThreadForAllSig.cpp || cmake_object_order_depends_target_ChatRoom_Client
+  DEP_FILE = CMakeFiles/ChatRoom_Client.dir/C14/OneThreadForAllSig.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/ChatRoom_Client.dir
+  OBJECT_FILE_DIR = CMakeFiles/ChatRoom_Client.dir/C14
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target ChatRoom_Client
@@ -218,7 +224,7 @@ build CMakeFiles/ChatRoom_Client.dir/C9/ChatRoom_Client.cpp.o: CXX_COMPILER__Cha
 #############################################
 # Link the executable ChatRoom_Client
 
-build ChatRoom_Client: CXX_EXECUTABLE_LINKER__ChatRoom_Client_Debug CMakeFiles/ChatRoom_Client.dir/C9/ChatRoom_Client.cpp.o
+build ChatRoom_Client: CXX_EXECUTABLE_LINKER__ChatRoom_Client_Debug CMakeFiles/ChatRoom_Client.dir/C9/ChatRoom_Client.cpp.o CMakeFiles/ChatRoom_Client.dir/C14/OneThreadForAllSig.cpp.o
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
   OBJECT_DIR = CMakeFiles/ChatRoom_Client.dir
   POST_BUILD = :
@@ -474,6 +480,68 @@ build PassFD: CXX_EXECUTABLE_LINKER__PassFD_Debug CMakeFiles/PassFD.dir/C13/Pass
   TARGET_FILE = PassFD
   TARGET_PDB = PassFD.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target ForkDeadLock
+
+
+#############################################
+# Order-only phony target for ForkDeadLock
+
+build cmake_object_order_depends_target_ForkDeadLock: phony || CMakeFiles/ForkDeadLock.dir
+
+build CMakeFiles/ForkDeadLock.dir/C14/ForkDeadLock.cpp.o: CXX_COMPILER__ForkDeadLock_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C14/ForkDeadLock.cpp || cmake_object_order_depends_target_ForkDeadLock
+  DEP_FILE = CMakeFiles/ForkDeadLock.dir/C14/ForkDeadLock.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/ForkDeadLock.dir
+  OBJECT_FILE_DIR = CMakeFiles/ForkDeadLock.dir/C14
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ForkDeadLock
+
+
+#############################################
+# Link the executable ForkDeadLock
+
+build ForkDeadLock: CXX_EXECUTABLE_LINKER__ForkDeadLock_Debug CMakeFiles/ForkDeadLock.dir/C14/ForkDeadLock.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  OBJECT_DIR = CMakeFiles/ForkDeadLock.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = ForkDeadLock
+  TARGET_PDB = ForkDeadLock.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target OneThreadForAllSig
+
+
+#############################################
+# Order-only phony target for OneThreadForAllSig
+
+build cmake_object_order_depends_target_OneThreadForAllSig: phony || CMakeFiles/OneThreadForAllSig.dir
+
+build CMakeFiles/OneThreadForAllSig.dir/C14/OneThreadForAllSig.cpp.o: CXX_COMPILER__OneThreadForAllSig_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C14/OneThreadForAllSig.cpp || cmake_object_order_depends_target_OneThreadForAllSig
+  DEP_FILE = CMakeFiles/OneThreadForAllSig.dir/C14/OneThreadForAllSig.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/OneThreadForAllSig.dir
+  OBJECT_FILE_DIR = CMakeFiles/OneThreadForAllSig.dir/C14
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target OneThreadForAllSig
+
+
+#############################################
+# Link the executable OneThreadForAllSig
+
+build OneThreadForAllSig: CXX_EXECUTABLE_LINKER__OneThreadForAllSig_Debug CMakeFiles/OneThreadForAllSig.dir/C14/OneThreadForAllSig.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  OBJECT_DIR = CMakeFiles/OneThreadForAllSig.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = OneThreadForAllSig
+  TARGET_PDB = OneThreadForAllSig.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -508,7 +576,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug
 
-build all: phony High_Performance_Server ReadHttp ReceiveTypeDataBySelect LTvsET UnblockedConnect ChatRoom_Client ChatRoom_Server SimultaneousTCPandUDP UnifiedEventSource ReceiveUrgDataBySig ConnectTimeOut CloseUnactiveConnect ShareMemoryChatRoomServer PassFD
+build all: phony High_Performance_Server ReadHttp ReceiveTypeDataBySelect LTvsET UnblockedConnect ChatRoom_Client ChatRoom_Server SimultaneousTCPandUDP UnifiedEventSource ReceiveUrgDataBySig ConnectTimeOut CloseUnactiveConnect ShareMemoryChatRoomServer PassFD ForkDeadLock OneThreadForAllSig
 
 # =============================================================================
 # Built-in targets

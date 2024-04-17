@@ -17,7 +17,8 @@ add_executable(UnblockedConnect C9/UnblockedConnect.cpp
         C9/UnblockedConnect.cpp)
 add_executable(ChatRoom_Client C9/ChatRoom_Client.cpp
         C9/ChatRoom_Client.cpp
-        C11/LST_Timer.h)
+        C11/LST_Timer.h
+        C14/OneThreadForAllSig.cpp)
 add_executable(ChatRoom_Server C9/ChatRoom_Server.cpp
         C9/ChatRoom_Server.cpp)
 add_executable(SimultaneousTCPandUDP C9/SimultaneousTCPandUDP.cpp
@@ -36,3 +37,7 @@ add_executable(ShareMemoryChatRoomServer C13/ShareMemoryChatRoomServer.cpp
         C13/ShareMemoryChatRoomServer.cpp)
 add_executable(PassFD C13/PassFD.cpp
         C13/PassFD.cpp)
+add_executable(ForkDeadLock C14/ForkDeadLock.cpp
+        C14/ForkDeadLock.cpp)
+add_executable(OneThreadForAllSig C14/OneThreadForAllSig.cpp
+        C14/OneThreadForAllSig.cpp)
