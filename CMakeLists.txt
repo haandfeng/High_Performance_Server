@@ -31,3 +31,8 @@ add_executable(ConnectTimeOut C11/ConnectTimeOut.cpp
 add_executable(CloseUnactiveConnect C11/CloseUnactiveConnect.cpp
         C11/CloseUnactiveConnect.cpp
         C11/LST_Timer.h)
+
+add_executable(ShareMemoryChatRoomServer C13/ShareMemoryChatRoomServer.cpp
+        C13/ShareMemoryChatRoomServer.cpp)
+add_executable(PassFD C13/PassFD.cpp
+        C13/PassFD.cpp)

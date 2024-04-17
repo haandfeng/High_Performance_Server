@@ -412,6 +412,68 @@ build CloseUnactiveConnect: CXX_EXECUTABLE_LINKER__CloseUnactiveConnect_Debug CM
   TARGET_FILE = CloseUnactiveConnect
   TARGET_PDB = CloseUnactiveConnect.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target ShareMemoryChatRoomServer
+
+
+#############################################
+# Order-only phony target for ShareMemoryChatRoomServer
+
+build cmake_object_order_depends_target_ShareMemoryChatRoomServer: phony || CMakeFiles/ShareMemoryChatRoomServer.dir
+
+build CMakeFiles/ShareMemoryChatRoomServer.dir/C13/ShareMemoryChatRoomServer.cpp.o: CXX_COMPILER__ShareMemoryChatRoomServer_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C13/ShareMemoryChatRoomServer.cpp || cmake_object_order_depends_target_ShareMemoryChatRoomServer
+  DEP_FILE = CMakeFiles/ShareMemoryChatRoomServer.dir/C13/ShareMemoryChatRoomServer.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/ShareMemoryChatRoomServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/ShareMemoryChatRoomServer.dir/C13
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target ShareMemoryChatRoomServer
+
+
+#############################################
+# Link the executable ShareMemoryChatRoomServer
+
+build ShareMemoryChatRoomServer: CXX_EXECUTABLE_LINKER__ShareMemoryChatRoomServer_Debug CMakeFiles/ShareMemoryChatRoomServer.dir/C13/ShareMemoryChatRoomServer.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  OBJECT_DIR = CMakeFiles/ShareMemoryChatRoomServer.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = ShareMemoryChatRoomServer
+  TARGET_PDB = ShareMemoryChatRoomServer.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target PassFD
+
+
+#############################################
+# Order-only phony target for PassFD
+
+build cmake_object_order_depends_target_PassFD: phony || CMakeFiles/PassFD.dir
+
+build CMakeFiles/PassFD.dir/C13/PassFD.cpp.o: CXX_COMPILER__PassFD_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C13/PassFD.cpp || cmake_object_order_depends_target_PassFD
+  DEP_FILE = CMakeFiles/PassFD.dir/C13/PassFD.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/PassFD.dir
+  OBJECT_FILE_DIR = CMakeFiles/PassFD.dir/C13
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target PassFD
+
+
+#############################################
+# Link the executable PassFD
+
+build PassFD: CXX_EXECUTABLE_LINKER__PassFD_Debug CMakeFiles/PassFD.dir/C13/PassFD.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  OBJECT_DIR = CMakeFiles/PassFD.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = PassFD
+  TARGET_PDB = PassFD.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -446,7 +508,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug
 
-build all: phony High_Performance_Server ReadHttp ReceiveTypeDataBySelect LTvsET UnblockedConnect ChatRoom_Client ChatRoom_Server SimultaneousTCPandUDP UnifiedEventSource ReceiveUrgDataBySig ConnectTimeOut CloseUnactiveConnect
+build all: phony High_Performance_Server ReadHttp ReceiveTypeDataBySelect LTvsET UnblockedConnect ChatRoom_Client ChatRoom_Server SimultaneousTCPandUDP UnifiedEventSource ReceiveUrgDataBySig ConnectTimeOut CloseUnactiveConnect ShareMemoryChatRoomServer PassFD
 
 # =============================================================================
 # Built-in targets
