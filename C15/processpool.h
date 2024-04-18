@@ -318,7 +318,8 @@ void processpool<T>::run_parent() {
     int number=0;
     int ret=-1;
     while(!m_stop)
-    {   number=epoll_wait(m_epollfd,events,MAX_EVENT_NUMBER,-1);
+    {
+        number=epoll_wait(m_epollfd,events,MAX_EVENT_NUMBER,-1);
         if((number<0)&&(errno!=EINTR))
         {
             printf("epoll failure\n");
