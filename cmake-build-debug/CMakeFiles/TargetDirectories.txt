@@ -14,5 +14,7 @@
 /Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug/CMakeFiles/PassFD.dir
 /Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug/CMakeFiles/ForkDeadLock.dir
 /Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug/CMakeFiles/OneThreadForAllSig.dir
+/Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug/CMakeFiles/CGIServer.dir
+/Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug/CMakeFiles/http_conn.dir
 /Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug/CMakeFiles/rebuild_cache.dir

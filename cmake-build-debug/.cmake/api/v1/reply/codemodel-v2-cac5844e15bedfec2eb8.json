@@ -30,7 +30,9 @@
 						12,
 						13,
 						14,
-						15
+						15,
+						16,
+						17
 					]
 				}
 			],
@@ -60,12 +62,21 @@
 						12,
 						13,
 						14,
-						15
+						15,
+						16,
+						17
 					]
 				}
 			],
 			"targets" : 
 			[
+				{
+					"directoryIndex" : 0,
+					"id" : "CGIServer::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CGIServer-Debug-44df059fce5b2a834cdc.json",
+					"name" : "CGIServer",
+					"projectIndex" : 0
+				},
 				{
 					"directoryIndex" : 0,
 					"id" : "ChatRoom_Client::@6890427a1f51a3e7e1df",
@@ -176,6 +187,13 @@
 					"id" : "UnifiedEventSource::@6890427a1f51a3e7e1df",
 					"jsonFile" : "target-UnifiedEventSource-Debug-3ca78f39f2af089d2393.json",
 					"name" : "UnifiedEventSource",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "http_conn::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-http_conn-Debug-dd28588ab858d3cc39cf.json",
+					"name" : "http_conn",
 					"projectIndex" : 0
 				}
 			]

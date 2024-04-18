@@ -542,6 +542,86 @@ build OneThreadForAllSig: CXX_EXECUTABLE_LINKER__OneThreadForAllSig_Debug CMakeF
   TARGET_FILE = OneThreadForAllSig
   TARGET_PDB = OneThreadForAllSig.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target CGIServer
+
+
+#############################################
+# Order-only phony target for CGIServer
+
+build cmake_object_order_depends_target_CGIServer: phony || CMakeFiles/CGIServer.dir
+
+build CMakeFiles/CGIServer.dir/C15/CGIServer.cpp.o: CXX_COMPILER__CGIServer_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C15/CGIServer.cpp || cmake_object_order_depends_target_CGIServer
+  DEP_FILE = CMakeFiles/CGIServer.dir/C15/CGIServer.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/CGIServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/CGIServer.dir/C15
+
+build CMakeFiles/CGIServer.dir/C15/http_conn.cpp.o: CXX_COMPILER__CGIServer_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C15/http_conn.cpp || cmake_object_order_depends_target_CGIServer
+  DEP_FILE = CMakeFiles/CGIServer.dir/C15/http_conn.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/CGIServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/CGIServer.dir/C15
+
+build CMakeFiles/CGIServer.dir/C15/RunServer.cpp.o: CXX_COMPILER__CGIServer_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C15/RunServer.cpp || cmake_object_order_depends_target_CGIServer
+  DEP_FILE = CMakeFiles/CGIServer.dir/C15/RunServer.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/CGIServer.dir
+  OBJECT_FILE_DIR = CMakeFiles/CGIServer.dir/C15
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target CGIServer
+
+
+#############################################
+# Link the executable CGIServer
+
+build CGIServer: CXX_EXECUTABLE_LINKER__CGIServer_Debug CMakeFiles/CGIServer.dir/C15/CGIServer.cpp.o CMakeFiles/CGIServer.dir/C15/http_conn.cpp.o CMakeFiles/CGIServer.dir/C15/RunServer.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  OBJECT_DIR = CMakeFiles/CGIServer.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = CGIServer
+  TARGET_PDB = CGIServer.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target http_conn
+
+
+#############################################
+# Order-only phony target for http_conn
+
+build cmake_object_order_depends_target_http_conn: phony || CMakeFiles/http_conn.dir
+
+build CMakeFiles/http_conn.dir/C15/http_conn.cpp.o: CXX_COMPILER__http_conn_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C15/http_conn.cpp || cmake_object_order_depends_target_http_conn
+  DEP_FILE = CMakeFiles/http_conn.dir/C15/http_conn.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/http_conn.dir
+  OBJECT_FILE_DIR = CMakeFiles/http_conn.dir/C15
+
+build CMakeFiles/http_conn.dir/C15/RunServer.cpp.o: CXX_COMPILER__http_conn_unscanned_Debug /Users/ha/CLionProjects/High_Performance_Server/C15/RunServer.cpp || cmake_object_order_depends_target_http_conn
+  DEP_FILE = CMakeFiles/http_conn.dir/C15/RunServer.cpp.o.d
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles/http_conn.dir
+  OBJECT_FILE_DIR = CMakeFiles/http_conn.dir/C15
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target http_conn
+
+
+#############################################
+# Link the executable http_conn
+
+build http_conn: CXX_EXECUTABLE_LINKER__http_conn_Debug CMakeFiles/http_conn.dir/C15/http_conn.cpp.o CMakeFiles/http_conn.dir/C15/RunServer.cpp.o
+  FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.4.sdk
+  OBJECT_DIR = CMakeFiles/http_conn.dir
+  POST_BUILD = :
+  PRE_LINK = :
+  TARGET_FILE = http_conn
+  TARGET_PDB = http_conn.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -576,7 +656,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Folder: /Users/ha/CLionProjects/High_Performance_Server/cmake-build-debug
 
-build all: phony High_Performance_Server ReadHttp ReceiveTypeDataBySelect LTvsET UnblockedConnect ChatRoom_Client ChatRoom_Server SimultaneousTCPandUDP UnifiedEventSource ReceiveUrgDataBySig ConnectTimeOut CloseUnactiveConnect ShareMemoryChatRoomServer PassFD ForkDeadLock OneThreadForAllSig
+build all: phony High_Performance_Server ReadHttp ReceiveTypeDataBySelect LTvsET UnblockedConnect ChatRoom_Client ChatRoom_Server SimultaneousTCPandUDP UnifiedEventSource ReceiveUrgDataBySig ConnectTimeOut CloseUnactiveConnect ShareMemoryChatRoomServer PassFD ForkDeadLock OneThreadForAllSig CGIServer http_conn
 
 # =============================================================================
 # Built-in targets

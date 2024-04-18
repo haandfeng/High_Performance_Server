@@ -41,3 +41,14 @@ add_executable(ForkDeadLock C14/ForkDeadLock.cpp
         C14/ForkDeadLock.cpp)
 add_executable(OneThreadForAllSig C14/OneThreadForAllSig.cpp
         C14/OneThreadForAllSig.cpp)
+add_executable(CGIServer C15/CGIServer.cpp
+        C15/CGIServer.cpp
+        C15/processpool.h
+        C15/http_conn.cpp
+        C15/http_conn.h
+        C15/RunServer.cpp)
+add_executable(http_conn C15/http_conn.cpp
+        C15/http_conn.cpp
+        C15/http_conn.h
+        C14/locker.h
+        C15/RunServer.cpp)
