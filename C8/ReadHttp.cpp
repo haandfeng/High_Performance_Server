@@ -18,21 +18,27 @@
 enum CHECK_STATE{CHECK_STATE_REQUESTLINE=0,CHECK_STATE_HEADER};
 /*从状态机的三种可能状态，即行的读取状态，分别表示:读取到一个完整的行、行出 错和行数据尚且不完整*/
 enum LINE_STATUS{LINE_OK=0,LINE_BAD,LINE_OPEN};
-/*服务器处理HTTP请求的结果:NO_REQUEST表示请求不完整，需要继续读取客户数 据;GET_REQUEST表示获得了一个完整的客户请求;BAD_REQUEST表示客户请求有语法错 误;FORBIDDEN_REQUEST表示客户对资源没有足够的访问权限;INTERNAL_ERROR表示服 务器内部错误;CLOSED_CONNECTION表示客户端已经关闭连接了*/
-enum HTTP_CODE{NO_REQUEST,GET_REQUEST,BAD_REQUEST, FORBIDDEN_REQUEST,INTERNAL_ERROR,CLOSED_CONNECTION}; /*为了简化问题，我们没有给客户端发送一个完整的HTTP应答报文，而只是根据服务器
-的处理结果发送如下成功或失败信息*/
+/*服务器处理HTTP请求的结果:NO_REQUEST表示请求不完整，需要继续读取客户数 据;GET_REQUEST表示获得了一个完整的客户请求;BAD_REQUEST表示客户请求有语法错 误;FORBIDDEN_REQUEST表示客户对资源没有足够的访问权限;
+ * INTERNAL_ERROR表示服务器内部错误;CLOSED_CONNECTION表示客户端已经关闭连接了*/
+enum HTTP_CODE{NO_REQUEST,GET_REQUEST,BAD_REQUEST, FORBIDDEN_REQUEST,INTERNAL_ERROR,CLOSED_CONNECTION};
+/*为了简化问题，我们没有给客户端发送一个完整的HTTP应答报文，而只是根据服务器的处理结果发送如下成功或失败信息*/
 static const char*szret[]={"I get a correct result\n","Something wrong\n"};
 
 /*从状态机，用于解析出一行内容*/
 LINE_STATUS parse_line(char*buffer,int&checked_index,int&read_index)
 {
     char temp;
-/*checked_index指向buffer(应用程序的读缓冲区)中当前正在分析的字节， read_index指向buffer中客户数据的尾部的下一字节。buffer中第0~checked_index 字节都已分析完毕，第checked_index~(read_index-1)字节由下面的循环挨个分析*/
+/*checked_index指向buffer(应用程序的读缓冲区)中当前正在分析的字节，
+ * read_index指向buffer中客户数据的尾部的下一字节。buffer中第0~checked_index 字节都已分析完毕，
+ * 第checked_index~(read_index-1)字节由下面的循环挨个分析*/
     for(;checked_index<read_index;++checked_index)
     {
     /*获得当前要分析的字节*/
     temp=buffer[checked_index];
-    /*如果当前的字节是“\r”，即回车符，则说明可能读取到一个完整的行*/
+    /*如果当前的字节是“\r”，即回车符，则说明可能读取到一个完整的行
+       - `\r`：回车符，表示光标移动到当前行的开头，但不换行。
+       - `\n`：换行符，表示将光标移动到下一行的开头。
+       - `\0`：空字符，通常用作字符串的终止符，表示字符串的结束。。*/
     if(temp=='\r')
     {
 /*如果“\r”字符碰巧是目前buffer中的最后一个已经被读入的客户数据，那么这次分析没有读取到一个完整的行，返回LINE_OPEN以表示还需要继续读取客户数据才能进一步分 析*/
