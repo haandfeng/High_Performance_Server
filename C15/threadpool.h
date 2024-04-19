@@ -15,7 +15,7 @@ public:
     /*往请求队列中添加任务*/
     bool append(T*request);
 private:
-/*工作线程运行的函数，它不断从工作队列中取出任务并执行之*/
+/*工作线程运行的函数，它不断从工作队列中取出任务并执行之，必须是静态的*/
     static void*worker(void*arg);
     void run();
 private:
