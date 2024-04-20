@@ -392,7 +392,8 @@ http_conn::HTTP_CODE http_conn::do_request()
     m_file_address= (char*)mmap(0,m_file_stat.st_size,PROT_READ,MAP_PRIVATE,fd,0);
     close(fd);
     return FILE_REQUEST;
-} /*对内存映射区执行munmap操作*/
+}
+/*对内存映射区执行munmap操作*/
 void http_conn::unmap()
 {
     if(m_file_address)
@@ -409,16 +410,26 @@ bool http_conn::write()
     int bytes_to_send=m_write_idx;
     if(bytes_to_send==0)
     {
+        /*此时可以修改 epoll 事件，监听套接字上的读事件（EPOLLIN），并重新初始化 HTTP 连接的状态，以便处理下一个请求。*/
         modfd(m_epollfd,m_sockfd,EPOLLIN);
         init();
         return true;
     }
     while(1)
     {
+        /*writev 函数用于将分散的数据写入文件描述符。在这里，writev 函数被用于将分散在多个缓冲区中的数据一次性写入到套接字 m_sockfd 中。
+         * 在这里m_iv_count数量只能为2或1
+         * 写到m_sockfd——Http响应*/
         temp=writev(m_sockfd,m_iv,m_iv_count);
         if(temp<=-1)
-        { /*如果TCP写缓冲没有空间，则等待下一轮EPOLLOUT事件。虽然在此期间，服务器无
-法立即接收到同一客户的下一个请求，但这可以保证连接的完整性*/ if(errno==EAGAIN)
+        {
+            /*如果TCP写缓冲没有空间，则等待下一轮EPOLLOUT事件。虽然在此期间，
+             * 服务器无法立即接收到同一客户的下一个请求，但这可以保证连接的完整性
+             *TCP 写缓冲没有空间意味着当前写操作无法立即完成，因为发送缓冲区已经满了。这通常发生在对端的接收速度比发送速度慢的情况下，
+             * 或者在网络拥塞的情况下。当发生这种情况时，系统会阻塞或延迟写操作，直到发送缓冲区中有足够的空间来容纳要发送的数据。
+               在这段代码中，如果 writev 函数返回 -1，并且 errno 的值是 EAGAIN，则说明写操作被阻塞，因为发送缓冲区已满。
+               此时，服务器将修改 epoll 监听事件，等待下一次可写事件触发，以便继续发送数据。这样可以确保连接的完整性，并防止数据丢失。*/
+        if(errno==EAGAIN)
             {
                 modfd(m_epollfd,m_sockfd,EPOLLOUT);
                 return true;
@@ -429,7 +440,9 @@ bool http_conn::write()
         bytes_to_send-=temp;
         bytes_have_send+=temp;
         if(bytes_to_send<=bytes_have_send)
-        { /*发送HTTP响应成功，根据HTTP请求中的Connection字段决定是否立即关闭连接*/ unmap();
+        {
+            /*发送HTTP响应成功，根据HTTP请求中的Connection字段决定是否立即关闭连接*/
+            unmap();
             if(m_linger)
             {
                 init();
@@ -444,17 +457,26 @@ bool http_conn::write()
         }
     }
 }
-/*往写缓冲中写入待发送的数据*/
+/*往写缓冲中写入待发送的数据
+ * 在 C/C++ 中，省略号 ... 表示可变数量的参数。在函数定义或声明中使用 ... 表示函数接受可变数量的参数。具体详情可以看obsidian内笔记*/
 bool http_conn::add_response(const char*format,...)
 {
+//    写缓冲区中待发送的字节数>=/*写缓冲区的大小*/
     if(m_write_idx>=WRITE_BUFFER_SIZE)
     {
         return false;
     }
     va_list arg_list;
+//    按照format的类型来读如数据
     va_start(arg_list,format);
-    int len=vsnprintf(m_write_buf+m_write_idx,WRITE_BUFFER_SIZE-1-
-                                              m_write_idx,format,arg_list); if(len>=(WRITE_BUFFER_SIZE-1-m_write_idx))
+    /*这段代码使用vsnprintf函数向m_write_buf中写入格式化的字符串。参数m_write_buf+m_write_idx指定了写入的起始位置，
+      WRITE_BUFFER_SIZE-1-m_write_idx指定了最大可写入的字符数。format是格式化字符串，arg_list是参数列表。
+      vsnprintf函数会根据format字符串中的格式说明符（比如%d、%s等）来格式化参数，并将结果写入到指定的缓冲区中。最终，
+      vsnprintf返回实际写入缓冲区的字符数len。
+     * */
+    int len=vsnprintf(m_write_buf+m_write_idx,WRITE_BUFFER_SIZE-1-m_write_idx,format,arg_list);
+
+    if(len>=(WRITE_BUFFER_SIZE-1-m_write_idx))
     {
         return false;
     }
@@ -466,7 +488,8 @@ bool http_conn::add_status_line(int status,const char*title) {
     return add_response("%s%d%s\r\n","HTTP/1.1",status,title);
 }
 bool http_conn::add_headers(int content_len)
-{add_content_length(content_len);
+{
+    add_content_length(content_len);
     add_linger();
     add_blank_line();
 }
@@ -476,8 +499,7 @@ bool http_conn::add_content_length(int content_len)
 }
 bool http_conn::add_linger()
 {
-    return add_response("Connection:%s\r\n",(m_linger==true)?"keep-
-                                            alive":"close");
+    return add_response("Connection:%s\r\n",(m_linger==true)?"keep-alive":"close");
 }
 bool http_conn::add_blank_line()
 {
@@ -485,10 +507,13 @@ bool http_conn::add_blank_line()
 }
 bool http_conn::add_content(const char*content) {
     return add_response("%s",content);
-} /*根据服务器处理HTTP请求的结果，决定返回给客户端的内容*/ bool http_conn::process_write(HTTP_CODE ret)
+}
+/*根据服务器处理HTTP请求的结果，决定返回给客户端的内容*/
+bool http_conn::process_write(HTTP_CODE ret)
 {
     switch(ret)
     {
+//        未知错误
         case INTERNAL_ERROR:
         {
             add_status_line(500,error_500_title);
@@ -499,6 +524,7 @@ bool http_conn::add_content(const char*content) {
             }
             break;
         }
+
         case BAD_REQUEST:
         {
             add_status_line(400,error_400_title);
@@ -510,7 +536,8 @@ bool http_conn::add_content(const char*content) {
             break;
         }
         case NO_RESOURCE:
-        {add_status_line(404,error_404_title);
+        {
+            add_status_line(404,error_404_title);
             add_headers(strlen(error_404_form));
             if(!add_content(error_404_form))
             {
@@ -530,15 +557,22 @@ bool http_conn::add_content(const char*content) {
         }
         case FILE_REQUEST:
         {
-            add_status_line(200,ok_200_title); if(m_file_stat.st_size!=0)
+            add_status_line(200,ok_200_title);
+            if(m_file_stat.st_size!=0)
             {
-                add_headers(m_file_stat.st_size); m_iv[0].iov_base=m_write_buf; m_iv[0].iov_len=m_write_idx; m_iv[1].iov_base=m_file_address; m_iv[1].iov_len=m_file_stat.st_size;
+                add_headers(m_file_stat.st_size);
+                m_iv[0].iov_base=m_write_buf;
+                m_iv[0].iov_len=m_write_idx;
+                m_iv[1].iov_base=m_file_address;
+                m_iv[1].iov_len=m_file_stat.st_size;
                 m_iv_count=2;
                 return true;
             }
             else
             {
-                const char*ok_string="<html><body></body></html>"; add_headers(strlen(ok_string)); if(!add_content(ok_string))
+                const char*ok_string="<html><body></body></html>";
+                add_headers(strlen(ok_string));
+                if(!add_content(ok_string))
                 {
                     return false;
                 }
@@ -549,7 +583,9 @@ bool http_conn::add_content(const char*content) {
             return false;
         }
     }
-    m_iv[0].iov_base=m_write_buf; m_iv[0].iov_len=m_write_idx;
+//    为什么要这样
+    m_iv[0].iov_base=m_write_buf;
+    m_iv[0].iov_len=m_write_idx;
     m_iv_count=1;
     return true;
 } /*由线程池中的工作线程调用，这是处理HTTP请求的入口函数*/

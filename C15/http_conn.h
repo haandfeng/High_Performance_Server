@@ -20,6 +20,8 @@
 #include<sys/mman.h>
 #include<stdarg.h>
 #include<errno.h>
+//自己加的，不然iovec会相关函数会报错
+#include <sys/uio.h>
 #include "../C14/locker.h"
 //#include"locker.h"
 class http_conn
